@@ -12,6 +12,8 @@ export class AuthService {
 
   http = inject(HttpClient);
 
+  register() {}
+
   getTeste(): void {
     this.http.get<any>(environment.apiUrlHealth).subscribe({
       next: (res) => {

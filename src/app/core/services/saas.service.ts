@@ -1,9 +1,14 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SaasService {
+  constructor() {}
+  authService = inject(AuthService);
 
-  constructor() { }
+  registerUser() {
+    return this.authService.register();
+  }
 }
